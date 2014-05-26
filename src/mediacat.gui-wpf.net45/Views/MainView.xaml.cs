@@ -13,12 +13,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace mediacat.gui_wpf.net45 {
+namespace mediacat.gui_wpf.net45.Views {
    /// <summary>
-   /// Interaction logic for MainWindow.xaml
+   /// Interaction logic for MainView.xaml
    /// </summary>
-   public partial class MainWindow : Window {
-      public MainWindow() {
+   public partial class MainView : Window {
+      public MainView() {
          InitializeComponent();
       }
    }
