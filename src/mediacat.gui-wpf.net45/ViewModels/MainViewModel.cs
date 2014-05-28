@@ -12,51 +12,23 @@ using mediacat.gui_wpf.net45.Models;
 
 namespace mediacat.gui_wpf.net45.ViewModels {
    internal class MainViewModel : ViewModelBase {
-      private DelegateCommand exitCommand;
-
-      public SongsModel Songs { get; set; }
-      public string SongArtistToAdd { get; set; }
-      public string SongTitleToAdd { get; set; }
+      private DelegateCommand ExitCommandDelegate;
 
       public MainViewModel() {
-         Songs = SongsModel.Current;
+         //Songs = SongsModel.Current;
       }
 
 
       public ICommand ExitCommand {
-         get {
-            if ( exitCommand == null ) {
-               exitCommand = new DelegateCommand(Exit);
-            }
-            return exitCommand;
-         }
+         get { return ExitCommandDelegate ?? ( ExitCommandDelegate = new DelegateCommand(Exit) ); }
       }
+
+
+      public SongsModel SongsData { get; private set; }
 
 
       private void Exit() {
          Application.Current.Shutdown();
       }
-
-
-      private ICommand _addSongCommand;
-
-      public ICommand AddSongCommand {
-         get {
-            if ( _addSongCommand == null ) {
-               _addSongCommand = new DelegateCommand(delegate() {
-                                                        SongArtistToAdd = SongArtistToAdd.Trim();
-                                                        SongTitleToAdd = SongTitleToAdd.Trim();
-
-                                                        if ( SongArtistToAdd.Length == 0 ) throw new Exception("Missing artist name.");
-                                                        if ( SongTitleToAdd.Length == 0 ) throw new Exception("Missing title.");
-
-                                                        Songs.AddSong(SongArtistToAdd, SongTitleToAdd);
-                                                     });
-            }
-
-            return _addSongCommand;
-         }
-      }
-
    }
 }

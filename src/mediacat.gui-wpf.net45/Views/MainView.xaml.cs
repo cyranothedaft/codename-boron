@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using mediacat.gui_wpf.net45.ViewModels;
+
+
 
 namespace mediacat.gui_wpf.net45.Views {
    /// <summary>
@@ -20,6 +23,11 @@ namespace mediacat.gui_wpf.net45.Views {
    public partial class MainView : Window {
       public MainView() {
          InitializeComponent();
+      }
+
+
+      internal void SetSongsViewModel(SongsViewModel songsViewModel) {
+         SongsView.ViewModel = songsViewModel;
       }
    }
 }
