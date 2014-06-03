@@ -11,7 +11,6 @@ namespace mediacat.gui_wpf.net45.Models {
 
       public MediaSourceWatcher(MediaSource mediaSource) {
          MediaSource = mediaSource;
-         throw new NotImplementedException();
       }
    }
 }

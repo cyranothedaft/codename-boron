@@ -17,7 +17,6 @@ namespace mediacat.gui_wpf.net45.Models {
 
       public MediaSource(MediaSourceType sourceType) {
          SourceType = sourceType;
-         throw new NotImplementedException();
       }
    }
 }
