@@ -13,20 +13,18 @@
         <KeyBinding Key="X" Modifiers="Control" Command="{StaticResource ExitCommandReference}" />
     </Window.InputBindings>
 
-
-    <Grid>
+    <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <Menu Grid.Row="0">
-            <MenuItem Header="_File">
-                <MenuItem Command="{Binding ExitCommand}" Header="E_xit" InputGestureText="Ctrl-X" />
-            </MenuItem>
-        </Menu>
-
-        <views:SongsView Name="SongsView" Grid.Row="1" HorizontalAlignment="Right" Margin="0, 5, 20, 10" VerticalAlignment="Center">
-        </views:SongsView>
+        <Label Grid.Row="0">TopMatter</Label>
+        <Grid Grid.Row="1" ShowGridLines="True">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <views:SourcesView Name="SourcesView" Grid.Column="0"/>
+        </Grid>
     </Grid>
 </Window>

@@ -19,10 +19,12 @@ namespace mediacat.gui_wpf.net45 {
 
          // Create the ViewModel and expose it using the View's DataContext
          var mainViewModel = new ViewModels.MainViewModel();
-         var songsViewModel = new ViewModels.SongsViewModel();
+         //var songsViewModel = new ViewModels.SongsViewModel();
+         var sourcesViewModel = new ViewModels.SourcesViewModel();
          Views.MainView view = new Views.MainView();
          view.DataContext = mainViewModel;
-         view.SetSongsViewModel(songsViewModel);
+         view.SetSourcesViewModel(sourcesViewModel);
+         //view.SetSongsViewModel(songsViewModel);
          view.Show();
       }
 
