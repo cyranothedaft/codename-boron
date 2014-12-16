@@ -30,10 +30,5 @@ namespace mediacat.gui_wpf.net45.Views {
       internal SourcesViewModel ViewModel {
          set { this.DataContext = value; }
       }
-
-
-      private void NameCM_Click(object sender, RoutedEventArgs e) {
-         throw new NotImplementedException();
-      }
    }
 }
