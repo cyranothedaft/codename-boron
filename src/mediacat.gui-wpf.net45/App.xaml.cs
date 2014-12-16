@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
+using mediacat.gui_wpf.net45.Models;
 
 
 
@@ -18,13 +19,21 @@ namespace mediacat.gui_wpf.net45 {
          base.OnStartup(e);
 
          // Create the ViewModel and expose it using the View's DataContext
-         var mainViewModel = new ViewModels.MainViewModel();
+
+
+         var sourcesModel = new SourcesModel();
+         sourcesModel.AddSource("Silent Street", MediaSourceType.MusicLibrary, "Available");
+
+         var sourcesViewModel = new ViewModels.SourcesViewModel(sourcesModel);
+         sourcesViewModel.Title = "Sources Title...";
+
+         var mainViewModel = new ViewModels.MainViewModel(sourcesViewModel);
+         mainViewModel.HeaderText = "Header Text...";
+
          //var songsViewModel = new ViewModels.SongsViewModel();
-         var sourcesViewModel = new ViewModels.SourcesViewModel();
+
          Views.MainView view = new Views.MainView();
-         view.DataContext = mainViewModel;
-         view.SetSourcesViewModel(sourcesViewModel);
-         //view.SetSongsViewModel(songsViewModel);
+         view.ViewModel = mainViewModel;
          view.Show();
       }
 

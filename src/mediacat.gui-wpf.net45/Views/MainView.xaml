@@ -18,13 +18,13 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0">TopMatter</Label>
+        <TextBlock Grid.Row="0" Text="{Binding Path=HeaderText}" />
         <Grid Grid.Row="1" ShowGridLines="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <views:SourcesView Name="SourcesView" Grid.Column="0"/>
+            <views:SourcesView x:Name="SourcesView" Grid.Column="0"/>
         </Grid>
     </Grid>
 </Window>

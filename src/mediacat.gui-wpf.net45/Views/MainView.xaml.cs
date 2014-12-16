@@ -26,12 +26,11 @@ namespace mediacat.gui_wpf.net45.Views {
       }
 
 
-      internal void SetSourcesViewModel(SourcesViewModel sourcesViewModel) {
-         SourcesView.ViewModel = sourcesViewModel;
+      internal MainViewModel ViewModel {
+         set {
+            this.DataContext = value;
+            this.SourcesView.ViewModel = value.SourcesViewModel;
+         }
       }
-
-      //internal void SetSongsViewModel(SongsViewModel songsViewModel) {
-      //   SongsView.ViewModel = songsViewModel;
-      //}
    }
 }
