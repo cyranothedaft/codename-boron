@@ -30,6 +30,7 @@ namespace mediacat.gui_wpf.net45.Views {
          set {
             this.DataContext = value;
             this.SourcesView.ViewModel = value.SourcesViewModel;
+            this.SongsView.ViewModel = value.SongsViewModel;
          }
       }
    }

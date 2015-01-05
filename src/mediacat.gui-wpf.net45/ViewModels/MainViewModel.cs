@@ -14,12 +14,15 @@ namespace mediacat.gui_wpf.net45.ViewModels {
    internal class MainViewModel : ViewModelBase {
       private DelegateCommand ExitCommandDelegate;
 
-      public MainViewModel(SourcesViewModel sourcesViewModel) {
+      public MainViewModel(SourcesViewModel sourcesViewModel, SongsViewModel songsViewModel) {
          SourcesViewModel = sourcesViewModel;
+         SongsViewModel = songsViewModel;
       }
 
 
       public SourcesViewModel SourcesViewModel { get; private set; }
+
+      public SongsViewModel SongsViewModel { get; private set; }
 
 
       public string HeaderText { get; set; }
