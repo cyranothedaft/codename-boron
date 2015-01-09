@@ -18,18 +18,19 @@ using mediacat.gui_wpf.net45.ViewModels;
 
 namespace mediacat.gui_wpf.net45.Views {
    /// <summary>
-   /// Interaction logic for MainView.xaml
+   /// Interaction logic for SourceExplorerView.xaml
    /// </summary>
-   public partial class MainView : Window {
-      public MainView() {
+   public partial class SourceExplorerView : UserControl {
+      public SourceExplorerView() {
          InitializeComponent();
       }
 
 
-      internal MainViewModel ViewModel {
+      internal SourceExplorerViewModel ViewModel {
          set {
             this.DataContext = value;
-            this.SourceExplorerView.ViewModel = value.SourceExplorerViewModel;
+            this.SourcesView.ViewModel = value.SourcesViewModel;
+            this.SongsView.ViewModel = value.SongsViewModel;
          }
       }
    }

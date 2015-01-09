@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace mediacat.gui_wpf.net45.Models {
-   internal class MediaCatalog : ObservableCollection<Song> {
+   internal class MediaCatalog {
       private static readonly object _threadLock = new Object();
       private static MediaCatalog current = null;
 
@@ -37,12 +37,6 @@ namespace mediacat.gui_wpf.net45.Models {
          _mediaSourceWatchers = new List<MediaSourceWatcher>();
          foreach ( MediaSource mediaSource in _mediaSources )
             _mediaSourceWatchers.Add(new MediaSourceWatcher(mediaSource));
-      }
-
-
-      public void AddSong(string artist, string title) {
-         Song song = new Song(artist, title);
-         Add(song);
       }
    }
 }

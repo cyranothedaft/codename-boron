@@ -60,9 +60,13 @@
     <Compile Include="Models\SourceModel.cs" />
     <Compile Include="Models\SourcesModel.cs" />
     <Compile Include="ViewModels\SongsViewModel.cs" />
+    <Compile Include="ViewModels\SourceExplorerViewModel.cs" />
     <Compile Include="ViewModels\SourcesViewModel.cs" />
     <Compile Include="Views\SongsView.xaml.cs">
       <DependentUpon>SongsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SourceExplorerView.xaml.cs">
+      <DependentUpon>SourceExplorerView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SourcesView.xaml.cs">
       <DependentUpon>SourcesView.xaml</DependentUpon>
@@ -86,6 +90,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\SongsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SourceExplorerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Threading;
 using mediacat.gui_wpf.net45.Models;
 using mediacat.gui_wpf.net45.ViewModels;
+using mediacat.gui_wpf.net45.Views;
 
 
 
@@ -36,14 +37,15 @@ namespace mediacat.gui_wpf.net45 {
          var songsViewModel = new SongsViewModel(songsModel);
          songsViewModel.Title = "Songs Title...";
 
-         var mainViewModel = new MainViewModel(sourcesViewModel, songsViewModel);
-         mainViewModel.HeaderText = "Header Text...";
+         var sourceExplorerViewModel = new SourceExplorerViewModel(sourcesViewModel, songsViewModel);
+         sourceExplorerViewModel.HeaderText = "Source Explorer...";
 
-         //var songsViewModel = new ViewModels.SongsViewModel();
+         var mainViewModel = new MainViewModel(sourceExplorerViewModel);
+         mainViewModel.HeaderText = "Main...";
 
-         Views.MainView view = new Views.MainView();
-         view.ViewModel = mainViewModel;
-         view.Show();
+         MainView mainView = new MainView();
+         mainView.ViewModel = mainViewModel;
+         mainView.Show();
       }
 
 

@@ -19,13 +19,6 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Text="{Binding Path=HeaderText}" />
-        <Grid Grid.Row="1" ShowGridLines="True">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <views:SourcesView x:Name="SourcesView" Grid.Column="0"/>
-            <views:SongsView x:Name="SongsView" Grid.Column="1"/>
-        </Grid>
+        <views:SourceExplorerView x:Name="SourceExplorerView" Grid.Row="1"/>
     </Grid>
 </Window>
